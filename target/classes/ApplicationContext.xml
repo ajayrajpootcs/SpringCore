@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <!-- //Setting property of employee using setters--> 
+   <!-- 
+   <bean id="Lokiverse" class="spring.model.Employee">
+	   <property name="name" value="Loki"></property>
+	   <property name="id" value="101"></property>
+   </bean>
+   --> 
+   
+   <bean id="Lokiverse" class="spring.model.Employee">
+	   <constructor-arg name="ID" value="00" type="int"/>
+	   <constructor-arg name="name" value="Loki"/>
+   </bean>
+   
+	   
+   
+   
+   
+</beans>
