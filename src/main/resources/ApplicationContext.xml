@@ -13,11 +13,71 @@
    </bean>
    --> 
    
-   <bean id="Lokiverse" class="spring.model.Employee">
+   <!-- Constructor Based-->   
+  <!-- 
+  <bean id="Lokiverse" class="spring.model.Employee">
 	   <constructor-arg name="ID" value="00" type="int"/>
 	   <constructor-arg name="name" value="Loki"/>
+	   <constructor-arg  ref="add"/>
+   </bean>
+  --> 
+  
+  <!--Parent Child-->
+  <!--<bean id="add" class="spring.model.Address">
+	   <constructor-arg name="street" value="street12"/>
+	   <constructor-arg name="city" value="noida"/>
+	   <constructor-arg name="state" value="UP"/>
    </bean>
    
+   
+   	<bean id="parent" class="spring.model.Employee">
+		<constructor-arg name="id" value="101"/>
+		<constructor-arg name="name" value="mukul" />
+	</bean>
+	
+	<bean id = "child" class="spring.model.Employee" parent="parent">
+		<constructor-arg name="address" ref="add"/>
+	</bean>-->
+    
+   
+   
+   <!-- Bean Life cycle-->
+   
+   <!-- 
+   	<bean id="add2" class="spring.model.Address">
+	   <property name="street" value="sector59"/>
+	   <property name="city" value="noida"/>
+	   <property name="state" value="UP"/>
+   </bean>
+   
+   <bean id="emp2" class="spring.model.Employee" init-method="xmlInitMethod" destroy-method="xmlDestroyMethod">
+	   <property name="name" value="rocky"/>
+	   <property name="id" value="01"/>
+	   <property name="address" ref="add2"/>
+	   
+   </bean>
+   -->
+   
+   
+	   <!--INNER BEAN-->
+	   <!-- 
+	   	<bean id="emp3" class="spring.model.Employee" init-method="xmlInitMethod" destroy-method="xmlDestroyMethod">
+		   <property name="name" value="Salar"/>
+		   <property name="id" value="010"/>
+		    <property name="address">
+				<bean class="spring.model.Address">
+				   <property name="street" value="sector59"/>
+				   <property name="city" value="noida"/>
+				   <property name="state" value="UP"/>
+				</bean>
+			</property>
+      	</bean>
+	   -->
+	   
+	   <!--Factory Method get Singlton OBJ-->
+	   <!--<bean id="singleton" class="spring.model.DbSingleton" factory-method="getSingleton">
+		   
+	   </bean>-->
 	   
    
    
