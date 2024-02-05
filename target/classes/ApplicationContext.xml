@@ -5,81 +5,47 @@
    xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
    
-   <!-- //Setting property of employee using setters--> 
-   <!-- 
-   <bean id="Lokiverse" class="spring.model.Employee">
-	   <property name="name" value="Loki"></property>
-	   <property name="id" value="101"></property>
+   <!--Auto wiring ByType-->
+   <!--<bean id="emp" class="spring.model.Employee" autowire="byType">
+	   <constructor-arg name="id" value="101"/>
+	   <constructor-arg name="name" value="Rikki" />
+	   
    </bean>
-   --> 
    
-   <!-- Constructor Based-->   
-  <!-- 
-  <bean id="Lokiverse" class="spring.model.Employee">
-	   <constructor-arg name="ID" value="00" type="int"/>
-	   <constructor-arg name="name" value="Loki"/>
-	   <constructor-arg  ref="add"/>
-   </bean>
-  --> 
-  
-  <!--Parent Child-->
-  <!--<bean id="add" class="spring.model.Address">
-	   <constructor-arg name="street" value="street12"/>
-	   <constructor-arg name="city" value="noida"/>
+   <bean id="address" class="spring.model.Address">
+	   <constructor-arg name="street" value="Electronic City"/>
+	   <constructor-arg name="city" value="Noida"/>
 	   <constructor-arg name="state" value="UP"/>
-   </bean>
+	   
+   </bean>-->
    
-   
-   	<bean id="parent" class="spring.model.Employee">
-		<constructor-arg name="id" value="101"/>
-		<constructor-arg name="name" value="mukul" />
-	</bean>
-	
-	<bean id = "child" class="spring.model.Employee" parent="parent">
-		<constructor-arg name="address" ref="add"/>
-	</bean>-->
+   <!--AutoWiring ByName-->
     
-   
-   
-   <!-- Bean Life cycle-->
-   
-   <!-- 
-   	<bean id="add2" class="spring.model.Address">
-	   <property name="street" value="sector59"/>
-	   <property name="city" value="noida"/>
-	   <property name="state" value="UP"/>
-   </bean>
-   
-   <bean id="emp2" class="spring.model.Employee" init-method="xmlInitMethod" destroy-method="xmlDestroyMethod">
-	   <property name="name" value="rocky"/>
-	   <property name="id" value="01"/>
-	   <property name="address" ref="add2"/>
+   <!--<bean id="emp" class="spring.model.Employee" autowire="byName">
+	   <constructor-arg name="id" value="101"/>
+	   <constructor-arg name="name" value="Rikki" />
 	   
    </bean>
-   -->
    
-   
-	   <!--INNER BEAN-->
-	   <!-- 
-	   	<bean id="emp3" class="spring.model.Employee" init-method="xmlInitMethod" destroy-method="xmlDestroyMethod">
-		   <property name="name" value="Salar"/>
-		   <property name="id" value="010"/>
-		    <property name="address">
-				<bean class="spring.model.Address">
-				   <property name="street" value="sector59"/>
-				   <property name="city" value="noida"/>
-				   <property name="state" value="UP"/>
-				</bean>
-			</property>
-      	</bean>
-	   -->
+   <bean id="address" class="spring.model.Address">
+	   <constructor-arg name="street" value="Electronic City"/>
+	   <constructor-arg name="city" value="Noida"/>
+	   <constructor-arg name="state" value="UP"/>
 	   
-	   <!--Factory Method get Singlton OBJ-->
-	   <!--<bean id="singleton" class="spring.model.DbSingleton" factory-method="getSingleton">
-		   
-	   </bean>-->
+   </bean>-->
+   
+   <!--AutoWiring Using Constructor -->
+   <bean id="emp" class="spring.model.Employee" autowire="constructor">
+	   <constructor-arg name="id" value="101"/>
+	   <constructor-arg name="name" value="Rikki" />
 	   
+   </bean>
    
-   
+   <bean id="address" class="spring.model.Address">
+	   <constructor-arg name="street" value="Electronic City"/>
+	   <constructor-arg name="city" value="Noida"/>
+	   <constructor-arg name="state" value="UP"/>
+	   
+   </bean>
    
 </beans>
