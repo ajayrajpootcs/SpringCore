@@ -35,13 +35,28 @@
    </bean>-->
    
    <!--AutoWiring Using Constructor -->
-   <bean id="emp" class="spring.model.Employee" autowire="constructor">
+   <!--<bean id="emp" class="spring.model.Employee" autowire="constructor">
 	   <constructor-arg name="id" value="101"/>
 	   <constructor-arg name="name" value="Rikki" />
 	   
    </bean>
    
    <bean id="address" class="spring.model.Address">
+	   <constructor-arg name="street" value="Electronic City"/>
+	   <constructor-arg name="city" value="Noida"/>
+	   <constructor-arg name="state" value="UP"/>
+	   
+   </bean>-->
+   
+   <!--Lookup method-->
+   <bean id="emp" class="spring.model.EmployeeForLookup" >
+	   <lookup-method name="applyMethod" bean="address"/>
+	   <constructor-arg name="id" value="102"/>
+	   <constructor-arg name="name" value="Salar"/>
+	   
+   </bean>
+   
+   <bean id="address" class="spring.model.Address" scope="prototype">
 	   <constructor-arg name="street" value="Electronic City"/>
 	   <constructor-arg name="city" value="Noida"/>
 	   <constructor-arg name="state" value="UP"/>
