@@ -1,12 +1,7 @@
 package spring.model;
 
-//import org.springframework.beans.factory.DisposableBean;
-//import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
-//import lombok.Data;
-
-//@Data
-//implements InitializingBean , DisposableBean // for BeanLifeCycle
 public class Employee {
 	private int id;
 	private String name;
@@ -30,27 +25,10 @@ public class Employee {
 		System.out.println("usingConstructor/");
 	}
 	
-	//INIT METHOD while bean Destroying
-//	private void xmlInitMethod() {
-//		System.out.println("XML INIT METHOD....");
-//	}
-//	@Override
-//	public void afterPropertiesSet() throws Exception {
-//		System.out.println(" afterPropertiesSet() METHOD of InitializingBean Interface....");
-//		
-//	}
-//	//Destroy Method while Bean Destroy
-//	private void xmlDestroyMethod() {
-//		System.out.println("XML DESTROY METHOD....");
-//	}
-//	@Override
-//	public void destroy() throws Exception{
-//		System.out.println(" destroy() METHOD of DisposableBean Interface....");	
-//	}
-	
 	public Address getAddress() {
 		return address;
 	}
+	@Autowired
 	public void setAddress(Address address) {
 		this.address = address;
 	}
