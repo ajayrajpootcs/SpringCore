@@ -1,11 +1,13 @@
 package spring.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Employee {
 	private int id;
 	private String name;
-	@Autowired
+//	@Autowired
 	private Address address;
 	
 	public Employee() {
@@ -17,7 +19,7 @@ public class Employee {
 		this.name = name;
 		System.out.println("usingConstructor/");
 	}
-//	@Autowired
+	@Autowired
 	public Employee(int id, String name,Address address) {
 		super();
 		this.id = id;

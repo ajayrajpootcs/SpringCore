@@ -8,12 +8,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
-           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:annotation-config/>   
+	<!--<context:annotation-config/>   -->
    <!--AutoWired with @-->
-   <bean id="emp" class="spring.model.Employee">
+   <!--<bean id="emp" class="spring.model.Employee">
 	   <constructor-arg name="id" value="101"/>
 	   <constructor-arg name="name" value="Rikki" />
 	   
@@ -23,8 +25,9 @@
 	   <constructor-arg name="city" value="Noida"/>
 	   <constructor-arg name="state" value="UP"/>
 	   
-   </bean>
+   </bean>-->
    
+   <context:component-scan base-package="src.main.java" />
    
    
   
