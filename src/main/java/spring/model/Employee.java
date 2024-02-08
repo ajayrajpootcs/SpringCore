@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Employee {
 	private int id;
 	private String name;
-	
+	@Autowired
 	private Address address;
 	
 	public Employee() {
@@ -17,6 +17,7 @@ public class Employee {
 		this.name = name;
 		System.out.println("usingConstructor/");
 	}
+//	@Autowired
 	public Employee(int id, String name,Address address) {
 		super();
 		this.id = id;
@@ -28,7 +29,7 @@ public class Employee {
 	public Address getAddress() {
 		return address;
 	}
-	@Autowired
+//	@Autowired
 	public void setAddress(Address address) {
 		this.address = address;
 	}
