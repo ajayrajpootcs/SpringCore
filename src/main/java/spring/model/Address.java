@@ -4,9 +4,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Address {
-	private String street;
-	private String city;
-	private String state;
+	private String street="mamura";
+	private String city="Noida";
+	private String state="UP";
 
 	public Address(String street, String city, String state) {
 		super();

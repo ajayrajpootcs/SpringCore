@@ -13,6 +13,7 @@
            http://www.springframework.org/schema/context 
            http://www.springframework.org/schema/context/spring-context.xsd">
 
+   <context:component-scan base-package="spring.model" />
 	<!--<context:annotation-config/>   -->
    <!--AutoWired with @-->
    <!--<bean id="emp" class="spring.model.Employee">
@@ -27,7 +28,6 @@
 	   
    </bean>-->
    
-   <context:component-scan base-package="spring.model" />
    
    
   

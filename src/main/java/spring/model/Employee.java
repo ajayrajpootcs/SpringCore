@@ -5,9 +5,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Employee {
-	private int id;
-	private String name;
-//	@Autowired
+	private int id=14;
+	private String name="Sam Bahadur";
+	@Autowired
 	private Address address;
 	
 	public Employee() {
@@ -19,7 +19,7 @@ public class Employee {
 		this.name = name;
 		System.out.println("usingConstructor/");
 	}
-	@Autowired
+//	@Autowired // Can't Autowire With Constructor
 	public Employee(int id, String name,Address address) {
 		super();
 		this.id = id;
