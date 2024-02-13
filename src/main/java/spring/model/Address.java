@@ -1,8 +1,8 @@
 package spring.model;
 
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 
-@Component
+//@Component(value="address") // defined in JavaConfig don't need hare
 public class Address {
 	private String street="mamura";
 	private String city="Noida";

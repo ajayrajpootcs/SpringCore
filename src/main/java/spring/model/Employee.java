@@ -3,7 +3,7 @@ package spring.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Employee {
 	private int id=14;
 	private String name="Sam Bahadur";
