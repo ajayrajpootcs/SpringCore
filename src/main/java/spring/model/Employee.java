@@ -1,9 +1,14 @@
 package spring.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+//import org.springframework.stereotype.Component;
 
 //@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Employee {
 	private int id=14;
 	private String name="Sam Bahadur";
@@ -49,6 +54,14 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 		System.out.println("settingName.....");
+	}
+	@PostConstruct
+	public void turnOn() {
+		System.out.println("Load operating system emp");
+	}
+	@PreDestroy
+	public void turnOff() {
+		System.out.println("Close all programs emp");
 	}
 	@Override
 	public String toString() {

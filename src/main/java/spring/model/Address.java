@@ -19,6 +19,13 @@ public class Address {
 		super();
 
 	}
+	public void turnOn() {
+		System.out.println("Load operating system for address");
+	}
+
+	public void turnOff() {
+		System.out.println("Close all programs for address");
+	}
 
 	public String getStreet() {
 		return street;
@@ -44,9 +51,9 @@ public class Address {
 		this.state = state;
 	}
 
-	@Override
-	public String toString() {
-		return "Address [street=" + street + ", city=" + city + ", state=" + state + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Address [street=" + street + ", city=" + city + ", state=" + state + "]";
+//	}
 
 }
