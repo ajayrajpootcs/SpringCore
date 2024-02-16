@@ -8,22 +8,35 @@ import org.springframework.context.support.AbstractApplicationContext;
 import spring.config.AppConfig;
 import spring.model.Address;
 import spring.model.Employee;
+import spring.model.ParentLookup;
 
 public class App {
 	public static void main(String[] args) {
 //		ApplicationContext IOC = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 		ApplicationContext IOC = new AnnotationConfigApplicationContext(AppConfig.class);
 		//Get Employee Bean
-		 Employee e = (Employee)IOC.getBean(Employee.class);
-		 System.out.println(e);
+//		 Employee e = (Employee)IOC.getBean(Employee.class);
+//		 System.out.println(e);
 //		Employee bean = IOC.getBean("employee", Employee.class);
 //		System.out.println(bean);
 		 
-		 //Different Bean Beacause of prototype scope
-		 Address address = IOC.getBean(Address.class);
-		 Address address2 = IOC.getBean(Address.class);
-		 System.out.println(address);
-		 System.out.println(address2);
+		 //Different Bean Beacause of prototype @scope
+//		 Address address = IOC.getBean(Address.class);
+//		 Address address2 = IOC.getBean(Address.class);
+//		 System.out.println(address);
+//		 System.out.println(address2);
+		 
+		 //@LAZY
+//		 Employee e2 = IOC.getBean(Employee.class);
+//		 System.out.println(e2);
+//		 System.out.println(e2.getAddress());
+		 
+		    System.out.println("--------Lookup---------");
+			ParentLookup beanPL = IOC.getBean(ParentLookup.class);
+			System.out.println(beanPL);
+			System.out.println("abstract method: "+beanPL.getChildDetails());
+			System.out.println("abstract method: "+beanPL.getChildDetails());
+
 		 
 		 //Closing IOC
 		 ((AbstractApplicationContext)IOC).registerShutdownHook();
