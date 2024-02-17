@@ -11,8 +11,8 @@ public class EmployeeForValue {
 	@Autowired
 	private AddressForValue address;
 	
-	@Value("#{address.companyName}")
-	private String companyName;
+//	@Value("#{address.companyName}")
+//	private String companyName;
 	
 	public EmployeeForValue() {
 		super();
