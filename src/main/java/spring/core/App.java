@@ -13,7 +13,8 @@ public class App {
 		ApplicationContext IOC = new ClassPathXmlApplicationContext("Application.xml");
 		EmployeeDao db = IOC.getBean("edao",EmployeeDao.class);
 		Employee e = new Employee(101,"Rocky",10000);
-		db.saveEmployee(e);
+//		db.saveEmployee(e);
+		db.saveByPrepaired(e);
 		System.out.println("Saved....");
 		
 	}
